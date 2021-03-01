@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Article } from '../../../../api/types';
+import { CHANGE_SORT_FILTER } from '../../../../utils/context/reducers/fitler';
+import { AppStateContext } from '../../../../utils/context/stores';
 import { sortByProperty } from '../../../../utils/helper';
 import './index.scss'
 
@@ -11,10 +13,10 @@ interface FilterProps {
 
 export const Filter: React.FC<FilterProps> = (props: FilterProps) => {
     const { currentArticles, setCurrentArticles, totalNumArticles } = props;
-    const [sortValue, setSortValue] = useState<string>("score");
+    const { state, dispatch } = useContext(AppStateContext);
 
     const handleValueChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSortValue(event.target.value);
+        dispatch({type: CHANGE_SORT_FILTER, payload: event.target.value})
         setCurrentArticles(sortByProperty(currentArticles, event.target.value));
     }
 
@@ -23,7 +25,8 @@ export const Filter: React.FC<FilterProps> = (props: FilterProps) => {
             <form onSubmit={() => {}}>
                 <label>
                     <span>Sort:</span>
-                        <select className="filter-element" value={sortValue} onChange={handleValueChange}>
+                        <select className="filter-element" value={state.filter.sort} onChange={handleValueChange}>
+                            <option value="none">None</option>
                             <option value="score">Score</option>
                             <option value="time">Time</option>
                         </select>

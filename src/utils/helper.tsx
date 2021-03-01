@@ -18,6 +18,7 @@ export const getTimeRelativeToNow = (time: number): TimeDifference => {
 }
 
 export const sortByProperty = (articles: Array<Article>, property: string) => {
+    if (property == 'none') return articles;
     const articlesClone: Array<Article> = JSON.parse(JSON.stringify(articles));
 
     articlesClone.sort((firstArticle, secondArticle) => {
