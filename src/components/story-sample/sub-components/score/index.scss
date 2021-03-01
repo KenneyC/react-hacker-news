@@ -1,0 +1,17 @@
+.score-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: #8ebdde;
+}
+
+.score-number {
+    font-size: larger;
+}
+
+.score-text {
+    font-size: smaller;
+}

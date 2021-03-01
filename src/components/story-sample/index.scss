@@ -1,0 +1,32 @@
+.story-sample-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    align-items: center;
+    margin: 5px 0 5px 0;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.story-sample-main-body {
+    padding: 0 0 0 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #d1e5e8;
+
+    &-subtext {
+        font-size: smaller;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+    }
+}
