@@ -1,4 +1,3 @@
-
 export const CHANGE_SORT_FILTER: string = 'CHANGE_SORT_FILTER';
 
 export const changeSortFilter = (sortType: 'score' | 'name') => ({
@@ -11,9 +10,8 @@ export const filterStateReducer = (state: any, action: any) => {
         case CHANGE_SORT_FILTER:
             const newState = JSON.parse(JSON.stringify(state));
             newState.sort = action.payload;
-            break;
+            return newState;
         default:
             return state;
     }
-    return state;
 }

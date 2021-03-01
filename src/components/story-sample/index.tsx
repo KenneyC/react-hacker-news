@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import { Article } from '../../api/types';
+import { Article, SearchResult } from '../../api/types';
 import { Score } from './sub-components/score';
 import { getTimeRelativeToNow } from '../../utils/helper';
 import './index.scss'

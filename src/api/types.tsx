@@ -13,5 +13,15 @@ export interface Article {
     time: number,
     title: string,
     url: string,
-    type: string
+    type: string,
+    points: number,
+}
+
+export interface SearchResult extends Article {
+    author: string,
+    created_at: string,
+    created_at_i: number,
+    objectID: string,
+    points: number;
+    relevancy_score: number
 }

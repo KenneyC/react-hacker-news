@@ -1,0 +1,15 @@
+.search-bar {
+    &-wrapper {
+        width: 100%;
+        display:flex;
+    }
+
+    &-body {
+        width: 95%;
+        height: 30px;
+    }
+
+    &-form-wrapper {
+        width: 100%;
+    }
+}
