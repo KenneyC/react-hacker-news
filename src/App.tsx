@@ -2,12 +2,15 @@ import React from 'react';
 import './assets/style/page.scss';
 import { HomePage } from './pages/home';
 import { AppStateProvider } from './utils/context/stores';
+import ErrorBoundary from './utils/error-boundary';
 
 function App() {
 	return (
 		<div className="App">
 			<AppStateProvider>
-				<HomePage />
+				<ErrorBoundary>
+					<HomePage />
+				</ErrorBoundary>
 			</AppStateProvider>
 		</div>
 	);

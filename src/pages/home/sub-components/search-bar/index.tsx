@@ -18,7 +18,7 @@ export const SearchBar: React.FC<SearchBar> = (props: SearchBar) => {
         <div className="search-bar-wrapper" onSubmit={(event) => handleSearchSubmit(event, enteredText)}>
             <form className="search-bar-form-wrapper">
                 <label>
-                    <input className="search-bar-body" type="text" onChange={handleChange} />
+                    <input className="search-bar-body" type="text" onChange={handleChange} placeholder="Search"/>
                 </label>
             </form>
         </div>
