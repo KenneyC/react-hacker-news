@@ -8,7 +8,7 @@ import { useInfiniteScroll } from '../../utils/hooks/infinite-scroll';
 import { Filter } from './sub-components/filter';
 import { SearchBar } from './sub-components/search-bar';
 import './index.scss';
-import { CHANGE_SEARCH_QUERY } from '../../utils/context/reducers/search';
+import { changeSearchPageNum, changeSearchQuery } from '../../utils/context/reducers/search';
 
 export const HomePage = () => {
     const [topStories, setTopStories] = useState<Array<Number>>([]);
@@ -37,6 +37,7 @@ export const HomePage = () => {
         } else if (bottomOfPage) {
             (async () => {
                 const nextPageArticles = await searchByQuery(state.search.query, state.search.pageNum + 1);  
+                dispatch(changeSearchPageNum(state.search.pageNum + 1));
                 const newArticles = [...currentArticles, ...nextPageArticles.hits];
                 setCurrentArticles(newArticles);
             })();
@@ -46,10 +47,7 @@ export const HomePage = () => {
     const handleSearchSubmit = async (event: any, enteredText: string) => {
         event.preventDefault();
         setCurrentArticles([]);
-        dispatch({
-            type: CHANGE_SEARCH_QUERY,
-            payload: enteredText
-        })
+        dispatch(changeSearchQuery(enteredText))
         const searchResults = await searchByQuery(enteredText);
         setCurrentArticles(searchResults.hits);
     }
