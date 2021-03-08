@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Article } from '../../../../api/types';
 import { CHANGE_SORT_FILTER } from '../../../../utils/context/reducers/fitler';
 import { AppStateContext } from '../../../../utils/context/stores';
@@ -17,7 +17,6 @@ export const Filter: React.FC<FilterProps> = (props: FilterProps) => {
 
     const handleValueChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         dispatch({type: CHANGE_SORT_FILTER, payload: event.target.value})
-        console.log(currentArticles);
         setCurrentArticles(sortByProperty(currentArticles, event.target.value));
     }
 
@@ -33,7 +32,7 @@ export const Filter: React.FC<FilterProps> = (props: FilterProps) => {
                         </select>
                 </label>
             </form>
-            <span>Showing {currentArticles.length} articles out of {totalNumArticles}</span>
+            <span>Showing {currentArticles.length} article{currentArticles.length > 1 ? 's' : '' } out of {totalNumArticles}</span>
         </div>
     )
 }

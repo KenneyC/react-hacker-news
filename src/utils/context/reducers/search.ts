@@ -4,8 +4,8 @@ export const CHANGE_SEARCH_QUERY: string = 'CHANGE_SEARCH_QUERY';
 export const CHANGE_SEARCH_PAGE_NUM: string = 'CHANGE_SEARCH_PAGE_NUM';
 
 export const changeSearchQuery = (payload: string) => ({
-        type: CHANGE_SEARCH_QUERY,
-        payload
+    type: CHANGE_SEARCH_QUERY,
+    payload
 });
 
 export const changeSearchPageNum = (payload: number) => ({

@@ -8,6 +8,6 @@ export const Score = (props: ScoreProps) => {
     const { score } = props;
     return <div className="score-wrapper">
         <span className="score-number">{score}</span>
-        <span className="score-text">point{score > 1 ? 's' : ''}</span>
+        <span className="score-text">point{score > 1 || score < 0 ? 's' : ''}</span>
     </div>
 }
