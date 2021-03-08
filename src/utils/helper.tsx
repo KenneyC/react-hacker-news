@@ -39,11 +39,11 @@ export const translateSearchToArticle = (searchResults: Array<SearchResult>) => 
 }
 
 export const sortByProperty = (articles: Array<Article | SearchResult>, property: string) => {
-    if (property == 'none') return articles;
+    if (property === 'none') return articles;
     const articlesClone: Array<Article | SearchResult> = JSON.parse(JSON.stringify(articles));
 
     articlesClone.sort((firstArticle, secondArticle) => {
-        return firstArticle[property] > secondArticle[property] ? -1 : firstArticle[property] == secondArticle[property] ? 0 : 1;
+        return firstArticle[property] > secondArticle[property] ? -1 : firstArticle[property] === secondArticle[property] ? 0 : 1;
     })
 
     return articlesClone;

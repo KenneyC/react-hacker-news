@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useState } from 'react';
 import './index.scss';
 
-interface SearchBar {
+interface SearchBarProps {
     handleSearchSubmit: (event: any, enteredText: string) => void
 }
 
-export const SearchBar: React.FC<SearchBar> = (props: SearchBar) => {
+export const SearchBar: React.FC<SearchBarProps> = (props: SearchBarProps) => {
     const { handleSearchSubmit } = props;
     const [ enteredText, setEnteredText ] = useState('');
 

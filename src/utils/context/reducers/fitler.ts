@@ -1,5 +1,3 @@
-import { AppState } from "../type";
-
 export const CHANGE_SORT_FILTER: string = 'CHANGE_SORT_FILTER';
 
 export const changeSortFilter = (sortType: 'score' | 'time') => ({

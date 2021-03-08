@@ -1,5 +1,3 @@
-import { createContext } from 'react';
-
 export const CHANGE_SEARCH_QUERY: string = 'CHANGE_SEARCH_QUERY';
 export const CHANGE_SEARCH_PAGE_NUM: string = 'CHANGE_SEARCH_PAGE_NUM';
 
